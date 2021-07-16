@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Оставьте заявку{% endblock %}
+
+{% block content %}
+    {% if list_of_requests %}
+        {% for a in list_of_requests %}
+            <a href="{% url 'requesting:detail' 1 %}">{{a.id}}</a>
+        {% endfor %}
+
+    {% else %}
+        Заявок нет
+    {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Заявки{% endblock %}
+
+{% block content %}
+    {% if list_of_requests %}
+        {% for a in list_of_requests %}
+            <a href="{% url 'requesting:detail' request.id %}
+">{{a.id}}</a>
+        {% endfor %}
+
+    {% else %}
+        Заявок нет
+    {% endif %}
+
+
+{% endblock %}
